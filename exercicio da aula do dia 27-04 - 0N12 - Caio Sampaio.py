@@ -2,60 +2,32 @@
 Nome: Caio Sampaio Oliveira
 TIA: 32195621
 Turma: 01N12
-Atividade: Exercício do pptx da aula do dia 06/04
 """
 
-#Entradas
+#Variáveis
+conversao_celsius = 0
 
-##Tabela de Produtos
-print("\nTabela de Produtos:")
-print("\nCódigo\t\tEspecificação\t\tPreço")
-print("------------------------------------------------")
-print("1\t\tCachorro Quente\t\tR$ 4,00")
-print("2\t\tX-Salada\t\tR$ 4,50")
-print("3\t\tX-Bacon\t\t\tR$ 5,00")
-print("4\t\tTorrada Simples\t\tR$ 2,00")
-print("5\t\tRefrigerante\t\tR$ 1,50")
-##Tabela de Produtos
+#Início código do Cabeçalho
 
-codigo_produto = int(input("\nDigite o código do produto (conforme a tabela acima): "))
+print("\nTabela de Conversão de ºF para ºC")
+print("---------------------------------")
+print("  Fahrenheit  |     Celsius      ")
+print("---------------------------------")
 
-quantidade_produto = int(input("Digite do quantidade do produto selecionado: "))
+#Fim do código do Cabeçalho
 
-catch_erro = 0
+#Início código do Corpo da Tabela
 
-#Valor dos produtos
-opcao_1 = 4.00
-opcao_2 = 4.50
-opcao_3 = 5.00
-opcao_4 = 2.00
-opcao_5 = 1.50
-                      
-#Processamento
+for temperatura in range(50,100,1): #1ª Parte da tabela
+    conversao_celsius = ((5/9)*(temperatura - 32))
+    print("    ",temperatura,"ºF    |     %2.2f"%conversao_celsius,"ºC")
+    print("---------------------------------")
+    
+#Tabela divida em duas partes por estética (melhor alinhamento do itens)
+    
+for temperatura in range(100,151,1): #2ª Parte da tabela (para alinhar a tabela a partir do 100ºF)
+    conversao_celsius = ((5/9)*(temperatura - 32))
+    print("   ",temperatura,"ºF    |     %2.2f"%conversao_celsius,"ºC")
+    print("---------------------------------")
 
-if(quantidade_produto == 0):
-    print("\nERRO: Você não pode colocar a quantidade de produtos como zero")
-    catch_erro = 1
-else:
-    if(codigo_produto == 1):
-        valor_total = (opcao_1 * quantidade_produto)
-    elif(codigo_produto == 2):
-        valor_total = (opcao_2 * quantidade_produto)
-    elif(codigo_produto == 3):
-        valor_total = (opcao_3 * quantidade_produto)
-    elif(codigo_produto == 4):
-        valor_total = (opcao_4 * quantidade_produto)
-    elif(codigo_produto == 5):
-        valor_total = (opcao_5 * quantidade_produto)
-    else:
-        print("\nERRO: Digite o código do produto respeitando a Tabela de Produtos")
-        catch_erro = 1
-
-#Saídas
-        
-if(catch_erro == 0):
-    print("\n\n\tNota Fiscal")
-    print("_____________________________")
-    print("\nTotal: R$ %2.2f"%valor_total)
-else:
-    print("\nErro em gerar a Nota Fiscal")
+#Fim do código do Corpo da Tabela
